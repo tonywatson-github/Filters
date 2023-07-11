@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <title>A Filter</title>
+
+</head>
+<body class="details">
+    <div class="boxbox1">
+        
+
+        <h1>Hello {{user.first}}</h1>
+        <ul>
+            <li>Filter Type: {{filter.type}}</li>
+            <li>Usage: {{filter.reason}}</li>
+            <li>Created: {{filter.created_at.strftime("%b %d %y")}}</li>
+            <li>Updated: {{filter.updated_at.strftime("%b %d %y")}}</li>
+        </ul>
+    </div>
+
+    <div class="boxbox2">
+        <a href="/logout"><button type="button">Logout</button></a>
+        <a href="/dashboard"><button type="button">Dashboard</button></a>
+    </div>
+
+    <div class="boxbox3">
+        {% if filter.type == '.22 micron' %}
+        <video src="{{ url_for('static', filename='simple.mp4') }}" controls onmouseover="playVideo(this)" onmouseout="pauseVideo(this)" loop height="200"></video>
+        {% endif %}
+    </div>
+
+    <div class="boxbox3">
+        {% if filter.type == '100kd' %}
+        <video src="{{ url_for('static', filename='hollow.mp4') }}" controls onmouseover="playVideo(this)" onmouseout="pauseVideo(this)" loop height="200"></video>
+        {% endif %}
+    </div>
+    
+</body>
+</html>

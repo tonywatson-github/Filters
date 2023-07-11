@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <title>Dashboard</title>
+
+</head>
+<body class="dashbody">
+    <h1>Welcome {{user.first}}</h1>
+    <a href="/filtersomething"><button type="button">Begin Filtering</button></a>
+    <a href="/logout"><button type="button">logout</button></a>
+    <a href="/myfilters"><button type="button">My Filters</button></a>
+
+    <table class="table table-dark table-striped table-hover table-sm fs-4 text-center">
+        <thead>
+            <tr>
+                <th>Filter</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            {% for filter in filters %}
+                <tr>
+                    <td>{{filter.type}} </td>
+                    <td>
+                        <a href="/details/{{filter.id}}">Details</a>
+                        {% if filter.user_id == session.idd %}
+                            <a href="/delete/{{filter.id}}">Delete</a>
+                            <a href="/edit/{{filter.id}}">Edit</a>
+                        {% endif %}
+                    </td> 
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    
+</table>
+</body>
+</html>

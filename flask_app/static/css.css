@@ -1,0 +1,50 @@
+.body {background: rgb(134, 31, 62);
+
+}
+
+.enter {
+    text-align: center;
+}
+
+.dashbody {
+    background: powderblue;
+}
+
+.filtertype {
+    text-align: center;
+}
+
+.type {
+    -webkit-text-fill-color: rgb(207, 138, 47);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: space-evenly;
+    }
+
+.edit {
+    background: rgb(124, 175, 160);
+}
+
+.details {
+    background: burlywood;
+}
+
+.boxbox1 {
+    display: flex;
+    justify-content: center;
+}
+
+.boxbox2 {
+    display: flex;
+    justify-content: center;
+    box-shadow: black 1px 1px;
+}
+
+.boxbox3 {
+    display: flex;
+    justify-content: center;
+}
+
+.mybody {
+    background: rgb(223, 191, 103);
+}
